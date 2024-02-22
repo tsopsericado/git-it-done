@@ -21,17 +21,18 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={inter.className}>{children}</body>
-      <ThemeProvider>
-        <AuthProvider>
-          {/* <SessionProvider> */}
-          <Navbar />
-          <div className="container">
-            {children}
-          </div>
-          {/* </SessionProvider> */}
-        </AuthProvider>
-      </ThemeProvider>
+      <body className={inter.className}>
+        <ThemeProvider>
+          <AuthProvider>
+            {/* <SessionProvider> */}
+            <Navbar />
+            <div className="">
+              {children}
+            </div>
+            {/* </SessionProvider> */}
+          </AuthProvider>
+        </ThemeProvider>
+      </body>
     </html>
   );
 }
