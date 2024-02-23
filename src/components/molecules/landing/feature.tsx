@@ -8,7 +8,7 @@ const Feature = () => {
   return (
     <>
       <section className="container mx-auto px-6 p-10">
-        <h1 className="text-4xl font-bold text-center text-gray-800 mb-8">
+        <h1 className="text-4xl font-bold text-center text-gray-800 mb-8 underline">
           Features
         </h1>
         <div className="flex items-center flex-wrap mb-20">

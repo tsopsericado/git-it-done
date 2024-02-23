@@ -13,7 +13,7 @@ const Navbar = () => {
   // const { data: session } = useSession()
 
   return (
-    <div className="container mx-auto px-6 py-2 flex justify-between items-center">
+    <div className="container mx-auto px-6 py-6 shadow-xl flex justify-between items-center">
       <Link href="/" className="font-bold text-2xl lg:text-4xl">
         G.I-D
       </Link>
