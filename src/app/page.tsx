@@ -7,11 +7,11 @@ import Testimonials from "@/components/molecules/landing/testimonials";
 export default function Home() {
   return (
     <main className="">
-      <Hero />
+      {/* <Hero />
       <Feature />
       <Testimonials />
       <CallToAction />
-      <Footer />
+      <Footer /> */}
     </main>
   );
 }

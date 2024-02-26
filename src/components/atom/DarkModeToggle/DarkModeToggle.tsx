@@ -1,6 +1,6 @@
 "use client";
 
-import { ThemeContext } from "@/context/ThemeContext";
+import { ThemeContext } from "@/app/context/ThemeContext";
 import React, { useContext } from "react";
 // import { ThemeContext } from "../../../context/ThemeContext";
 

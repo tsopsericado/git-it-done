@@ -1,9 +1,12 @@
 import type { Metadata } from "next";
 import { Inter } from "next/font/google";
 import "./globals.css";
-import { ThemeProvider } from "@/context/ThemeContext";
+import { ThemeProvider } from "@/app/context/ThemeContext";
 import AuthProvider from "@/app/lib/AuthProvider/AuthProvider";
 import Navbar from "../components/molecules/landing/navbar";
+import Sidenav from "./sidebar/sidenav";
+import ContextProvider from "./providers/ContextProvider";
+import GlobalStyleProvider from "./providers/GlobalStyleProvider";
 // import { SessionProvider } from "next-auth/react";
 
 
@@ -22,16 +25,21 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className={inter.className}>
-        <ThemeProvider>
-          <AuthProvider>
-            {/* <SessionProvider> */}
-            <Navbar />
-            <div className="">
-              {children}
-            </div>
-            {/* </SessionProvider> */}
-          </AuthProvider>
-        </ThemeProvider>
+        <ContextProvider>
+          <ThemeProvider>
+            <AuthProvider>
+              {/* <SessionProvider> */}
+              {/* <Navbar /> */}
+              <GlobalStyleProvider>
+                <Sidenav />
+                <div className="">
+                  {children}
+                </div>
+              </GlobalStyleProvider>
+              {/* </SessionProvider> */}
+            </AuthProvider>
+          </ThemeProvider>
+        </ContextProvider>
       </body>
     </html>
   );
