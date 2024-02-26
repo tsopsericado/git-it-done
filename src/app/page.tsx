@@ -12,6 +12,7 @@ export default function Home() {
       <Testimonials />
       <CallToAction />
       <Footer /> */}
+      <h1>content</h1>
     </main>
   );
 }

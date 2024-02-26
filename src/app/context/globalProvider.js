@@ -6,10 +6,10 @@ import themes from "./themes";
 export const GlobalContext = createContext();
 export const GlobalUpdateContext = createContext();
 
-const [selectedTheme, setSelectedTheme] = useState(0);
-const theme = themes[selectedTheme];
-
 export const GlobalProvider = ({ children }) => {
+  const [selectedTheme, setSelectedTheme] = useState(0);
+  const theme = themes[selectedTheme];
+
   return (
     <GlobalContext
       value={{
@@ -21,5 +21,5 @@ export const GlobalProvider = ({ children }) => {
   );
 };
 
-export const useGlobalState = useContext(GlobalContext);
-export const useGlobalUpdate = useContext(GlobalUpdateContext);
+export const useGlobalState = () => useContext(GlobalContext);
+export const useGlobalUpdate = () => useContext(GlobalUpdateContext);
