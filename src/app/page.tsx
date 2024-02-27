@@ -1,3 +1,4 @@
+import Tasks from "@/components/Tasks/Tasks";
 import CallToAction from "@/components/molecules/landing/callToAction";
 import Feature from "@/components/molecules/landing/feature";
 import Footer from "@/components/molecules/landing/footer";
@@ -12,7 +13,7 @@ export default function Home() {
       <Testimonials />
       <CallToAction />
       <Footer /> */}
-      <h1>content</h1>
+      <Tasks />
     </main>
   );
 }
