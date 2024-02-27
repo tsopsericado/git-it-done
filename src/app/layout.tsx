@@ -7,7 +7,7 @@ import Navbar from "../components/molecules/landing/navbar";
 import Sidenav from "./Sidebar/Sidenav";
 import ContextProvider from "./providers/ContextProvider";
 import GlobalStyleProvider from "./providers/GlobalStyleProvider";
-import { ClerkProvider } from "@clerk/nextjs";
+import { ClerkProvider, auth } from "@clerk/nextjs";
 // import { SessionProvider } from "next-auth/react";
 
 
@@ -23,6 +23,9 @@ export default function RootLayout({
 }: Readonly<{
   children: React.ReactNode;
 }>) {
+
+  const { userId } = auth();
+
   return (
     <ClerkProvider>
       <html lang="en">
@@ -38,7 +41,7 @@ export default function RootLayout({
             {/* <SessionProvider> */}
             {/* <Navbar /> */}
             <GlobalStyleProvider>
-              <Sidenav />
+              {userId && <Sidenav />}
               <div className="">
                 <div className="w-full">{children}</div>
               </div>
