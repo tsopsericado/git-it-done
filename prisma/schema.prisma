@@ -13,15 +13,15 @@ datasource db {
   url      = env("DATABASE_URL")
 }
 
-model Tasks {
-  id    string        @id @default(cuid()) @map("_id")
-  title   string
-  description  string?
-  date    Datetime
-  isCompleted Boolean   @default(false)
-  isImportant Boolean   @default(false)
+model Task {
+  id           String        @id @default(cuid()) @map("_id")
+  title        String
+  description  String?
+  date         String
+  isCompleted  Boolean   @default(false)
+  isImportant  Boolean   @default(false)
   
-  createdAt   DateTime  @default(now()) @map("created_at")
-  updatedAt   DateTime  @default(now()) @updatedAt @map("updated_at")
-  userId      String 
+  createdAt    DateTime  @default(now()) @map("created_at")
+  updatedAt    DateTime  @default(now()) @updatedAt @map("updated_at")
+  userId       String 
 }
