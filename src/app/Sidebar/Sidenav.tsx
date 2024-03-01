@@ -6,10 +6,24 @@ import Image from 'next/image'
 import menu from "@/app/utils/menu"
 import Link from 'next/link'
 import { usePathname, useRouter } from 'next/navigation'
+import { UserButton, useClerk, useUser } from '@clerk/nextjs'
+import Button from '@/components/atom/Button'
+import { arrowLeft, bars, logout } from '../utils/Icons'
 
 const Sidenav = () => {
 
-  const { theme } = useGlobalState()
+  const { theme, collapsed, collapseMenu } = useGlobalState()
+  const { signOut } = useClerk();
+
+  const { user } = useUser();
+
+  const { firstName, lastName, imageUrl } = user || {
+    firstName: "",
+    lastName: "",
+    imageUrl: "",
+  };
+
+
   const router = useRouter()
   const pathname = usePathname()
 
@@ -18,15 +32,22 @@ const Sidenav = () => {
   }
 
   return (
-    <SidebarStyled theme={theme}>
+    <SidebarStyled theme={theme} collapsed={collapsed}>
+      <button className="toggle-nav" onClick={collapseMenu}>
+        {collapsed ? bars : arrowLeft}
+      </button>
       <div className="profile">
         <div className="profile-overlay "></div>
         <div className="image">
-          <Image width={70} height={70} src="/avatar1.png" alt='profile' />
+          <Image width={70} height={70} src={imageUrl} alt='profile' />
+        </div>
+        <div className="user-btn absolute z-20 top-0 w-full h-full">
+          <UserButton />
         </div>
         <h1>
-          <span>Rey</span>
-          <span>Myst</span>
+          <h1 className="capitalize">
+            {firstName} {lastName}
+          </h1>
         </h1>
       </div>
       <ul className="nav-items">
@@ -47,6 +68,20 @@ const Sidenav = () => {
           )
         })}
       </ul>
+      <div className="sign-out relative m-6">
+        <Button
+          name={"Sign Out"}
+          type={"submit"}
+          padding={"0.4rem 0.8rem"}
+          borderRad={"0.8rem"}
+          fw={"500"}
+          fs={"1.2rem"}
+          icon={logout}
+          click={() => {
+            signOut(() => router.push("/signin"));
+          }}
+        />
+      </div>
     </SidebarStyled>
   )
 }

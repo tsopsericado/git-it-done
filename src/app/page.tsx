@@ -13,7 +13,7 @@ export default function Home() {
       <Testimonials />
       <CallToAction />
       <Footer /> */}
-      <Tasks />
+      <Tasks /> 
     </main>
   );
 }
