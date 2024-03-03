@@ -1,9 +1,9 @@
-import Tasks from "@/components/Tasks/Tasks";
-import CallToAction from "@/components/molecules/landing/callToAction";
-import Feature from "@/components/molecules/landing/feature";
-import Footer from "@/components/molecules/landing/footer";
-import Hero from "@/components/molecules/landing/hero";
-import Testimonials from "@/components/molecules/landing/testimonials";
+import Tasks from "@/app/components/Tasks/Tasks";
+import CallToAction from "@/app/components/molecules/landing/callToAction";
+import Feature from "@/app/components/molecules/landing/feature";
+import Footer from "@/app/components/molecules/landing/footer";
+import Hero from "@/app/components/molecules/landing/hero";
+import Testimonials from "@/app/components/molecules/landing/testimonials";
 
 export default function Home() {
   return (
@@ -13,7 +13,7 @@ export default function Home() {
       <Testimonials />
       <CallToAction />
       <Footer /> */}
-      <Tasks /> 
+      <Tasks />
     </main>
   );
 }

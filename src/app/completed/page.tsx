@@ -1,7 +1,7 @@
 "use client";
 import React from "react";
 import { useGlobalState } from "../context/globalProvider";
-import Tasks from "@/components/Tasks/Tasks";
+import Tasks from "@/app/components/Tasks/Tasks";
 
 function page() {
   const { completedTasks } = useGlobalState();

@@ -9,7 +9,7 @@ import Link from "next/link";
 import { usePathname, useRouter } from "next/navigation";
 import { arrowLeft, bars, logout } from "@/app/utils/Icons";
 import { UserButton, useClerk, useUser } from "@clerk/nextjs";
-import Button from "@/components/atom/Button";
+import Button from "@/app/components/atom/Button";
 
 function Sidenav() {
   const { theme, collapsed, collapseMenu } = useGlobalState();

@@ -3,7 +3,7 @@ import { Nunito } from "next/font/google";
 import "./globals.css";
 import { ThemeProvider } from "@/app/context/ThemeContext";
 import AuthProvider from "@/app/lib/AuthProvider/AuthProvider";
-import Navbar from "../components/molecules/landing/navbar";
+import Navbar from "./components/molecules/landing/navbar";
 import Sidenav from "./Sidebar/Sidenav";
 import ContextProvider from "./providers/ContextProvider";
 import GlobalStyleProvider from "./providers/GlobalStyleProvider";

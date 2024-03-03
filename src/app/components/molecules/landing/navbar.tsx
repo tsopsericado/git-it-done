@@ -4,7 +4,7 @@ import Link from "next/link";
 import React from "react";
 // import { signOut, useSession } from "next-auth/react";
 import { links } from "@/app/lib";
-import DarkModeToggle from "@/components/atom/DarkModeToggle/DarkModeToggle";
+import DarkModeToggle from "@/app/components/atom/DarkModeToggle/DarkModeToggle";
 
 
 
