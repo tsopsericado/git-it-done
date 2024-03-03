@@ -2,11 +2,8 @@
 import { useGlobalState } from "@/app/context/globalProvider";
 import React from "react";
 import styled from "styled-components";
-// import CreateContent from "../Modals/CreateContent";
-// import TaskItem from "../TaskItem/TaskItem";
 import { add, plus } from "@/app/utils/Icons";
 import Modal from "../Modals/Modal";
-// import TaskItem from "../../app/TaskItem/TaskItem";
 import CreateContent from "../Modals/CreateContent";
 import TaskItem from "@/app/TaskItem/TaskItem";
 

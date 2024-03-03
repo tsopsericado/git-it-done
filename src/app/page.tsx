@@ -4,8 +4,12 @@ import Feature from "@/app/components/molecules/landing/feature";
 import Footer from "@/app/components/molecules/landing/footer";
 import Hero from "@/app/components/molecules/landing/hero";
 import Testimonials from "@/app/components/molecules/landing/testimonials";
+import { useGlobalState } from "./context/globalProvider";
 
 export default function Home() {
+  const { tasks } = useGlobalState();
+
+
   return (
     <main className="">
       {/* <Hero />
@@ -13,7 +17,7 @@ export default function Home() {
       <Testimonials />
       <CallToAction />
       <Footer /> */}
-      <Tasks />
+      <Tasks title="All Tasks" tasks={tasks} />
     </main>
   );
 }
