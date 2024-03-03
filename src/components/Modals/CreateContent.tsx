@@ -1,3 +1,4 @@
+"use client"
 import axios from "axios";
 import { useState } from "react";
 import Button from "../atom/Button";
@@ -6,7 +7,7 @@ import { add } from "@/app/utils/Icons";
 import toast from "react-hot-toast";
 import { useGlobalState } from "@/app/context/globalProvider";
 
-function CreateContext() {
+function CreateContent() {
   const [title, setTitle] = useState("")
   const [description, setDescription] = useState()
   const [date, setDate] = useState("")
@@ -221,4 +222,4 @@ const CreateContentStyled = styled.form`
   }
 `;
 
-export default CreateContext
+export default CreateContent

@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { Inter } from "next/font/google";
+import { Nunito } from "next/font/google";
 import "./globals.css";
 import { ThemeProvider } from "@/app/context/ThemeContext";
 import AuthProvider from "@/app/lib/AuthProvider/AuthProvider";
@@ -11,7 +11,11 @@ import { ClerkProvider, auth } from "@clerk/nextjs";
 // import { SessionProvider } from "next-auth/react";
 
 
-const inter = Inter({ subsets: ["latin"] });
+// const inter = Inter({ subsets: ["latin"] });
+const nunito = Nunito({
+  weight: ["400", "500", "600", "700", "800"],
+  subsets: ["latin"],
+});
 
 export const metadata: Metadata = {
   title: "Get it done",
@@ -24,7 +28,8 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
 
-  const { userId } = auth();
+  // const { userId } = auth();
+  const { userId } = auth()
 
   return (
     <ClerkProvider>
@@ -34,7 +39,7 @@ export default function RootLayout({
             crossOrigin="anonymous"
             referrerPolicy="no-referrer" />
         </head>
-        <body className={inter.className}>
+        <body className={nunito.className}>
           <ContextProvider>
             {/* <ThemeProvider> */}
             {/* <AuthProvider> */}
