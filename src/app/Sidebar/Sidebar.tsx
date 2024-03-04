@@ -11,7 +11,7 @@ import { arrowLeft, bars, logout } from "@/app/utils/Icons";
 import { UserButton, useClerk, useUser } from "@clerk/nextjs";
 import Button from "@/app/components/atom/Button";
 
-function Sidenav() {
+function Sidebar() {
   const { theme, collapsed, collapseMenu } = useGlobalState();
   const { signOut } = useClerk();
 
@@ -294,4 +294,4 @@ const SidebarStyled = styled.nav<{ collapsed: boolean }>`
   }
 `;
 
-export default Sidenav;
+export default Sidebar;

@@ -71,62 +71,60 @@ function CreateContent() {
 
   return (
     <CreateContentStyled onSubmit={handleSubmit} theme={theme}>
-      <h1>Create Tasks</h1>
-      <div className="form-control">
+      <h1>Create a Task</h1>
+      <div className="input-control">
         <label htmlFor="title">Title</label>
         <input
           type="text"
-          name="title"
           id="title"
           value={title}
+          name="title"
           onChange={handleChange("title")}
-          placeholder="enter something"
+          placeholder="Fix bugs on my porfolio"
         />
       </div>
-      <div className="form-control">
+      <div className="input-control">
         <label htmlFor="description">Description</label>
         <textarea
-          rows={4}
-          name="description"
-          id="description"
           value={description}
           onChange={handleChange("description")}
-          placeholder="enter something"
+          name="description"
+          id="description"
+          rows={4}
+          placeholder="e.g, Learn about Next.js Auth"
         ></textarea>
       </div>
-      <div className="form-control">
+      <div className="input-control">
         <label htmlFor="date">Date</label>
         <input
+          value={date}
+          onChange={handleChange("date")}
           type="date"
           name="date"
           id="date"
-          value={date}
-          onChange={handleChange("date")}
-          placeholder="enter something"
         />
       </div>
-      <div className="form-control">
-        <label htmlFor="completed">Toogle Completed</label>
+      <div className="input-control toggler">
+        <label htmlFor="completed">Toggle Completed</label>
         <input
+          value={completed.toString()}
+          onChange={handleChange("completed")}
           type="checkbox"
           name="completed"
           id="completed"
-          value={completed.toString()}
-          onChange={handleChange("completed")}
-          placeholder="enter something"
         />
       </div>
-      <div className="form-control">
-        <label htmlFor="important">Toogle Important</label>
+      <div className="input-control toggler">
+        <label htmlFor="important">Toggle Important</label>
         <input
+          value={important.toString()}
+          onChange={handleChange("important")}
           type="checkbox"
           name="important"
           id="important"
-          value={important.toString()}
-          onChange={handleChange("important")}
-          placeholder="enter something"
         />
       </div>
+
       <div className="submit-btn flex justify-end">
         <Button
           type="submit"

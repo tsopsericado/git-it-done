@@ -1,3 +1,4 @@
+"use client"
 import Tasks from "@/app/components/Tasks/Tasks";
 import CallToAction from "@/app/components/molecules/landing/callToAction";
 import Feature from "@/app/components/molecules/landing/feature";
@@ -10,14 +11,7 @@ export default function Home() {
   const { tasks } = useGlobalState();
 
 
-  return (
-    <main className="">
-      {/* <Hero />
-      <Feature />
-      <Testimonials />
-      <CallToAction />
-      <Footer /> */}
-      <Tasks title="All Tasks" tasks={tasks} />
-    </main>
-  );
+  return <Tasks title="All Tasks" tasks={tasks} />
+
+
 }
