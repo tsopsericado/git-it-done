@@ -1,18 +1,18 @@
-"use client"
-import axios from "axios";
-import { useState } from "react";
-import Button from "../atom/Button";
-import styled from "styled-components";
-import { add } from "@/app/utils/Icons";
-import toast from "react-hot-toast";
+"use client";
 import { useGlobalState } from "@/app/context/globalProvider";
+import axios from "axios";
+import React, { useState } from "react";
+import toast from "react-hot-toast";
+import styled from "styled-components";
+import { add, plus } from "@/app/utils/Icons";
+import Button from "../atom/Button";
 
 function CreateContent() {
-  const [title, setTitle] = useState("")
-  const [description, setDescription] = useState()
-  const [date, setDate] = useState("")
-  const [completed, setCompleted] = useState(false)
-  const [important, setImportant] = useState(false)
+  const [title, setTitle] = useState("");
+  const [description, setDescription] = useState("");
+  const [date, setDate] = useState("");
+  const [completed, setCompleted] = useState(false);
+  const [important, setImportant] = useState(false);
 
   const { theme, allTasks, closeModal } = useGlobalState();
 
@@ -36,7 +36,7 @@ function CreateContent() {
       default:
         break;
     }
-  }
+  };
 
   const handleSubmit = async (e: any) => {
     e.preventDefault();
@@ -46,11 +46,12 @@ function CreateContent() {
       description,
       date,
       completed,
-      important
-    }
+      important,
+    };
 
     try {
-      const res = await axios.post("api/tasks", tasks)
+      const res = await axios.post("/api/tasks", tasks);
+
       if (res.data.error) {
         toast.error(res.data.error);
       }
@@ -60,14 +61,11 @@ function CreateContent() {
         allTasks();
         closeModal();
       }
-
     } catch (error) {
       toast.error("Something went wrong.");
       console.log(error);
     }
-
-
-  }
+  };
 
   return (
     <CreateContentStyled onSubmit={handleSubmit} theme={theme}>
@@ -80,7 +78,7 @@ function CreateContent() {
           value={title}
           name="title"
           onChange={handleChange("title")}
-          placeholder="Fix bugs on my porfolio"
+          placeholder="e.g, Watch a video from Fireship."
         />
       </div>
       <div className="input-control">
@@ -91,7 +89,7 @@ function CreateContent() {
           name="description"
           id="description"
           rows={4}
-          placeholder="e.g, Learn about Next.js Auth"
+          placeholder="e.g, Watch a video about Next.js Auth"
         ></textarea>
       </div>
       <div className="input-control">
@@ -138,7 +136,7 @@ function CreateContent() {
         />
       </div>
     </CreateContentStyled>
-  )
+  );
 }
 
 const CreateContentStyled = styled.form`
@@ -220,4 +218,4 @@ const CreateContentStyled = styled.form`
   }
 `;
 
-export default CreateContent
+export default CreateContent;
