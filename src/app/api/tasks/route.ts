@@ -37,6 +37,9 @@ export async function POST(req: Request) {
       },
     });
 
+    console.log("TASK CREATED: ", task);
+
+
     return NextResponse.json(task);
   } catch (error) {
     console.log("ERROR CREATING TASK: ", error);
@@ -57,6 +60,9 @@ export async function GET(req: Request) {
         userId,
       },
     });
+
+
+    console.log("ERROR CREATING TASK: ", tasks);
 
     return NextResponse.json(tasks);
   } catch (error) {

@@ -44,13 +44,21 @@ export const GlobalProvider = ({ children }) => {
         );
       });
 
-      setTasks(sorted);
+      //for test
+      setTasks(res.data);
+
+      // setTasks(sorted);
 
       setIsLoading(false);
     } catch (error) {
       console.log(error);
     }
   };
+
+  //for test
+  React.useEffect(() => {
+    allTasks();
+  }, []);
 
   const deleteTask = async (id) => {
     try {

@@ -17,6 +17,8 @@ function CreateContent() {
   const { theme, allTasks, closeModal } = useGlobalState();
 
   const handleChange = (name: string) => (e: any) => {
+    console.log(e.target.value);
+
     switch (name) {
       case "title":
         setTitle(e.target.value);
