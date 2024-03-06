@@ -1,6 +1,5 @@
 "use client"
 import React from 'react'
-import GlobalStyleProvider from './GlobalStyleProvider'
 import { GlobalProvider } from '../context/globalProvider';
 
 interface Props {
