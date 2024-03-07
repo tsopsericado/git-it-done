@@ -11,11 +11,11 @@ interface Props {
 const ContextProvider = ({ children }: Props) => {
   const [isReady, setIsReady] = React.useState(false)
 
-  React.useEffect(() => {
-    setTimeout(() => {
-      setIsReady(true)
-    }, 250)
-  }, [])
+  // React.useEffect(() => {
+  //   setTimeout(() => {
+  //     setIsReady(true)
+  //   }, 250)
+  // }, [])
 
   if (!isReady) {
     return null
