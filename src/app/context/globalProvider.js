@@ -37,17 +37,17 @@ export const GlobalProvider = ({ children }) => {
     try {
       const res = await axios.get("/api/tasks");
 
-      const sorted = [].slice.call(res.data).sort((a, b) => {
-        console.log(data);
+      const sorted = res.sort((a, b) => {
+        // console.log(data);
         return (
           new Date(b.createdAt).getTime() - new Date(a.createdAt).getTime()
         );
       });
 
       //for test
-      setTasks(res.data);
+      // setTasks(res.data);
 
-      // setTasks(sorted);
+      setTasks(sorted);
 
       setIsLoading(false);
     } catch (error) {
