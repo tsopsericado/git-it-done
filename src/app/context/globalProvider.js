@@ -37,28 +37,23 @@ export const GlobalProvider = ({ children }) => {
     try {
       const res = await axios.get("/api/tasks");
 
-      const sorted = res.sort((a, b) => {
-        // console.log(data);
-        return (
-          new Date(b.createdAt).getTime() - new Date(a.createdAt).getTime()
-        );
-      });
+      // const sorted = res.data.sort((a, b) => {
+      //   console.log(data);
+      //   return (
+      //     new Date(b.createdAt).getTime() - new Date(a.createdAt).getTime()
+      //   );
+      // });
 
       //for test
-      // setTasks(res.data);
+      setTasks(res.data);
 
-      setTasks(sorted);
+      // setTasks(sorted);
 
       setIsLoading(false);
     } catch (error) {
       console.log(error);
     }
   };
-
-  //for test
-  React.useEffect(() => {
-    allTasks();
-  }, []);
 
   const deleteTask = async (id) => {
     try {
@@ -84,6 +79,11 @@ export const GlobalProvider = ({ children }) => {
       toast.error("Something went wrong");
     }
   };
+
+  //for test
+  // React.useEffect(() => {
+  //   if (user) allTasks();
+  // }, [user]);
 
   const completedTasks = tasks.filter((task) => task.isCompleted === true);
   const importantTasks = tasks.filter((task) => task.isImportant === true);
