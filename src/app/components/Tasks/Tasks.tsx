@@ -23,32 +23,23 @@ function Tasks({ title, tasks }: Props) {
       <button className="btn-rounded" onClick={openModal}>
         {plus}
       </button>
-      {!isLoading ? (
-        <div className="tasks grid">
-          {tasks.map((task) => (
-            <TaskItem
-              key={task.id}
-              title={task.title}
-              description={task.description}
-              date={task.date}
-              isCompleted={task.isCompleted}
-              id={task.id}
-            />
-          ))}
-          <button className="create-task" onClick={openModal}>
-            {add}
-            Add New Task
-          </button>
-        </div>
-      ) :
-        (
-          <div className="tasks-loader w-full h-full flex items-center justify-center">
-            <span className="loader"></span>
-          </div>
 
-        )
-      }
-
+      <div className="tasks grid">
+        {tasks.map((task) => (
+          <TaskItem
+            key={task.id}
+            title={task.title}
+            description={task.description}
+            date={task.date}
+            isCompleted={task.isCompleted}
+            id={task.id}
+          />
+        ))}
+        <button className="create-task" onClick={openModal}>
+          {add}
+          Add New Task
+        </button>
+      </div>
     </TaskStyled>
   );
 }

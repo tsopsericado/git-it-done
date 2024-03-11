@@ -55,6 +55,11 @@ export const GlobalProvider = ({ children }) => {
     }
   };
 
+  //for test
+  React.useEffect(() => {
+    if (user) allTasks();
+  }, [user]);
+
   const deleteTask = async (id) => {
     try {
       const res = await axios.delete(`/api/tasks/${id}`);
@@ -80,18 +85,13 @@ export const GlobalProvider = ({ children }) => {
     }
   };
 
-  //for test
-  // React.useEffect(() => {
-  //   if (user) allTasks();
-  // }, [user]);
-
   const completedTasks = tasks.filter((task) => task.isCompleted === true);
   const importantTasks = tasks.filter((task) => task.isImportant === true);
   const incompleteTasks = tasks.filter((task) => task.isCompleted === false);
 
-  React.useEffect(() => {
-    if (user) allTasks();
-  }, [user]);
+  // React.useEffect(() => {
+  //   if (user) allTasks();
+  // }, [user]);
 
   return (
     <GlobalContext.Provider
