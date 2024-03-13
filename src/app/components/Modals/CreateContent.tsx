@@ -11,13 +11,14 @@ function CreateContent() {
   const [title, setTitle] = useState("");
   const [description, setDescription] = useState("");
   const [date, setDate] = useState("");
+  const [assignedTo, setAssignedTo] = useState("")
   const [completed, setCompleted] = useState(false);
   const [important, setImportant] = useState(false);
 
   const { theme, allTasks, closeModal } = useGlobalState();
 
   const handleChange = (name: string) => (e: any) => {
-    console.log(e.target.value);
+    // console.log(e.target.value);
 
     switch (name) {
       case "title":
@@ -28,6 +29,9 @@ function CreateContent() {
         break;
       case "date":
         setDate(e.target.value);
+        break;
+      case "assignedto":
+        setAssignedTo(e.target.value);
         break;
       case "completed":
         setCompleted(e.target.checked);
@@ -47,6 +51,7 @@ function CreateContent() {
       title,
       description,
       date,
+      assignedTo,
       completed,
       important,
     };
@@ -104,6 +109,19 @@ function CreateContent() {
           id="date"
         />
       </div>
+
+      <div className="input-control">
+        <label htmlFor="assignedTo">Assign To</label>
+        <input
+          value={assignedTo}
+          onChange={handleChange("assignedTo")}
+          type="email"
+          name="assignedTo"
+          id="assignedTo"
+          placeholder="enter email"
+        />
+      </div>
+
       <div className="input-control toggler">
         <label htmlFor="completed">Toggle Completed</label>
         <input

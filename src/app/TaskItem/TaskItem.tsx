@@ -9,17 +9,19 @@ interface Props {
   title: string;
   description: string;
   date: string;
+  assignedTo: string,
   isCompleted: boolean;
   id: string;
 }
 
-function TaskItem({ title, description, date, isCompleted, id }: Props) {
+function TaskItem({ title, description, date, assignedTo, isCompleted, id }: Props) {
   const { theme, deleteTask, updateTask } = useGlobalState();
   return (
     <TaskItemStyled theme={theme}>
       <h1>{title}</h1>
       <p>{description}</p>
       <p className="date">{formatDate(date)}</p>
+      <p>{assignedTo}</p>
       <div className="task-footer">
         {isCompleted ? (
           <button

@@ -72,9 +72,9 @@ export const GlobalProvider = ({ children }) => {
     }
   };
 
-  const updateTask = async (task) => {
+  const updateTask = async (task, id) => {
     try {
-      const res = await axios.put(`/api/tasks`, task);
+      const res = await axios.put(`/api/tasks/${id}`, task);
 
       toast.success("Task updated");
 

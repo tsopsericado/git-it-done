@@ -17,7 +17,7 @@ model Task {
   id           String        @id @default(cuid()) @map("_id")
   title        String
   description  String?
-  assignedTo   String?
+  assignedTo   String
   date         String
   isCompleted  Boolean   @default(false)
   isImportant  Boolean   @default(false)

@@ -24,7 +24,8 @@ const ContextProvider = ({ children }: Props) => {
   return (
     <GlobalProvider>
       <Toaster />
-      {children}</GlobalProvider>
+      {children}
+    </GlobalProvider>
   )
 }
 
