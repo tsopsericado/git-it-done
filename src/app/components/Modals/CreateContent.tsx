@@ -115,7 +115,7 @@ function CreateContent() {
         <input
           value={assignedTo}
           onChange={handleChange("assignedTo")}
-          type="email"
+          type="text"
           name="assignedTo"
           id="assignedTo"
           placeholder="enter email"

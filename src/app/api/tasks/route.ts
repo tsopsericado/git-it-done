@@ -12,7 +12,7 @@ export async function POST(req: Request) {
 
     const { title, description, date, assignedTo, completed, important } = await req.json();
 
-    if (!title || !description || !date) {
+    if (!title || !description || !date || !assignedTo) {
       return NextResponse.json({
         error: "Missing required fields",
         status: 400,
